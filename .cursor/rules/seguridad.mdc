@@ -1,0 +1,19 @@
+---
+description: Usar SIEMPRE antes de modificar autenticación, autorización, JWT, CORS, CSRF, cookies, tokens, logs, gestión de errores o dependencias
+alwaysApply: false
+---
+
+# Cambios sensibles de seguridad
+
+Si la tarea toca cualquiera de estos mecanismos, **no escribas código todavía**. Primero entrega:
+
+1. **Superficie afectada**: endpoints REST, queries/mutations GraphQL y pantallas implicadas.
+2. **Estado actual** con evidencias (`ruta:línea`).
+3. **Riesgos** del cambio propuesto (qué podría quedar abierto o romperse).
+4. **Plan** y **tests** que demostrarán que el control funciona (caso permitido + caso denegado).
+
+Principios:
+- La autorización se aplica en el recurso (backend), no en la ruta ni en el frontend.
+- Comprueba propiedad del recurso (el pedido pertenece al usuario), no solo el rol.
+- Nada de datos personales, tokens ni trazas internas en respuestas o logs.
+- La decisión final la toma una persona: termina con "Pendiente de validación humana".

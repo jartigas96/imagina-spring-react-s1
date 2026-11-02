@@ -1,0 +1,18 @@
+---
+description: Usar cuando se trabaje con queries, mutations, tipos GraphQL, resolvers o tipos TypeScript del contrato
+globs: "**/*.graphqls, frontend/src/graphql/**, frontend/codegen.ts, backend/src/main/java/**/graphql/**"
+alwaysApply: false
+---
+
+# Contrato GraphQL
+
+Fuente de verdad: @backend/src/main/resources/graphql/schema.graphqls
+
+1. Antes de usar un campo, comprueba que existe en el schema. Si no existe, **detente y dilo**.
+2. Cada cambio en el schema requiere: resolver Java (`@QueryMapping`/`@MutationMapping`/`@SchemaMapping`),
+   operación en `frontend/src/graphql/`, `npm run codegen` y revisión de componentes consumidores.
+3. Clasifica todo cambio de schema como **compatible** o **breaking** antes de aplicarlo.
+   Breaking: eliminar/renombrar campo o valor de enum, cambiar tipo, hacer obligatorio un argumento
+   o campo de input, pasar un campo de salida de non-null a nullable.
+4. Para retirar un campo: añade `@deprecated(reason: "...")`, migra consumidores y elimina en otra versión.
+5. Los importes son `String` decimal. No los conviertas a `Float`.

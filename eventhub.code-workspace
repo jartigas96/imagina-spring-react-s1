@@ -1,0 +1,22 @@
+{
+  // Workspace multi-root: abre este fichero en Cursor (File > Open Workspace from File...)
+  "folders": [
+    { "name": "🗂 raíz (AGENTS.md, .cursor)", "path": "." },
+    { "name": "☕ backend · Spring Boot 2.7 / Java 8", "path": "backend" },
+    { "name": "⚛️ frontend · React / TS", "path": "frontend" }
+  ],
+  "settings": {
+    // El language server de Java necesita JDK 17+; el proyecto compila para Java 8.
+    // Ajusta las rutas a tu máquina.
+    "java.jdt.ls.java.home": "/usr/lib/jvm/java-21-openjdk",
+    "java.configuration.runtimes": [
+      { "name": "JavaSE-1.8", "path": "/usr/lib/jvm/java-8-openjdk", "default": true },
+      { "name": "JavaSE-21", "path": "/usr/lib/jvm/java-21-openjdk" }
+    ],
+    "files.exclude": { "**/target": true, "**/node_modules": true },
+    "search.exclude": { "**/target": true, "**/node_modules": true, "frontend/src/generated": true }
+  },
+  "extensions": {
+    "recommendations": ["vscjava.vscode-java-pack", "vmware.vscode-spring-boot", "graphql.vscode-graphql"]
+  }
+}

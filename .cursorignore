@@ -1,0 +1,7 @@
+# Cursor NO puede leer estos archivos (Agent, Tab ni @menciones).
+# Ojo: la terminal y los MCP del agente sí podrían acceder. No es una barrera de seguridad absoluta.
+**/.env
+**/.env.*
+**/*.pem
+**/*.key
+**/secrets/**

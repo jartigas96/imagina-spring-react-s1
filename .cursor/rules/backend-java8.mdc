@@ -1,0 +1,22 @@
+---
+description: Restricciones de Java 8 y Spring Boot 2.7 para el backend
+globs: backend/**/*.java
+alwaysApply: false
+---
+
+# Backend legacy: Java 8 + Spring Boot 2.7
+
+El JDK de la máquina puede ser 17 o 21, pero el código **debe compilar con `--release 8`**.
+
+❌ No uses → ✅ Usa en su lugar
+- `var x = ...` → tipo explícito
+- `List.of(a, b)` → `Arrays.asList(a, b)` o `Collections.singletonList(a)`
+- `record Foo(...)` → clase con campos `final` y getters
+- `str.isBlank()` → `str.trim().isEmpty()`
+- `jakarta.servlet.*` → `javax.servlet.*`
+- `requestMatchers(...)` → `antMatchers(...)` (Spring Security 5.x)
+
+Ejemplo correcto:
+```java
+List<String> roles = Arrays.asList("USER", "ADMIN");
+```

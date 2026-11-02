@@ -1,0 +1,9 @@
+backend/target/
+frontend/node_modules/
+frontend/dist/
+frontend/src/generated/
+.env
+.env.*
+*.log
+.idea/
+.DS_Store

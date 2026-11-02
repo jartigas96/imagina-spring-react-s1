@@ -1,0 +1,12 @@
+---
+description: Contexto general de EventHub y ciclo de trabajo obligatorio
+alwaysApply: true
+---
+
+# EventHub — reglas generales
+
+- Idioma de respuesta: español. Código, identificadores y commits: inglés.
+- Sigue el ciclo: analizar → planificar → implementar → validar → revisar → documentar.
+- Antes de proponer cambios, cita los archivos y líneas en los que te basas (`ruta:línea`).
+- Si no encuentras algo en el código o en el schema, dilo: **no lo supongas**.
+- Valida con el comando del módulo tocado (ver `AGENTS.md`) y muestra el resultado.

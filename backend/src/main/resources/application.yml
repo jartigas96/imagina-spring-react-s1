@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: eventhub
+  graphql:
+    graphiql:
+      enabled: true
+    schema:
+      introspection:
+        enabled: true
+
+eventhub:
+  security:
+    # HS256 - clave compartida para firmar y validar los JWT de desarrollo
+    jwt-secret: "eventhub-super-secret-key-please-change-2019!!"
+  cors:
+    frontend-url: http://localhost:5173
+
+logging:
+  level:
+    com.imagina.eventhub: DEBUG

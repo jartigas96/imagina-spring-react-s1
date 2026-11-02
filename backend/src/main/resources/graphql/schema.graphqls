@@ -1,0 +1,80 @@
+# EventHub - contrato GraphQL (fuente de verdad del contrato FullStack)
+# Schema-first: Spring for GraphQL carga los ficheros *.graphqls de esta carpeta.
+# El frontend genera sus tipos a partir de ESTE fichero (frontend/codegen.ts).
+
+type Query {
+    "Eventos publicados. Público."
+    events(city: String): [Event!]!
+    "Detalle de un evento. Público."
+    event(id: ID!): Event
+    "Pedidos del cliente autenticado."
+    myOrders: [Order!]!
+    "Todos los pedidos. Solo backoffice (ROLE_ADMIN)."
+    orders(status: OrderStatus): [Order!]!
+}
+
+type Mutation {
+    "Compra de entradas por el cliente autenticado."
+    createOrder(input: CreateOrderInput!): Order!
+    "Cancela un pedido propio en estado PAID."
+    cancelOrder(id: ID!): Order!
+    "Reembolsa un pedido. Solo backoffice (ROLE_ADMIN)."
+    refundOrder(id: ID!, reason: String!): Order!
+}
+
+type Event {
+    id: ID!
+    title: String!
+    "Fecha ISO-8601 (yyyy-MM-dd'T'HH:mm)"
+    date: String!
+    venue: Venue!
+    ticketTypes: [TicketType!]!
+}
+
+type Venue {
+    id: ID!
+    name: String!
+    city: String!
+    capacity: Int!
+}
+
+type TicketType {
+    id: ID!
+    name: String!
+    "Importe decimal en EUR serializado como texto, p. ej. \"45.00\""
+    price: String!
+    available: Int!
+}
+
+type Order {
+    id: ID!
+    event: Event!
+    ticketType: TicketType!
+    quantity: Int!
+    "Importe total decimal en EUR serializado como texto"
+    total: String!
+    status: OrderStatus!
+    createdAt: String!
+    customer: Customer!
+    "Etiqueta impresa en la entrada"
+    label: String!
+}
+
+type Customer {
+    id: ID!
+    name: String!
+    email: String!
+    phone: String
+}
+
+enum OrderStatus {
+    PAID
+    CANCELLED
+    REFUNDED
+}
+
+input CreateOrderInput {
+    eventId: ID!
+    ticketTypeId: ID!
+    quantity: Int!
+}

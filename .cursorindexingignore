@@ -1,0 +1,7 @@
+# Fuera del índice semántico (no aparecen en búsquedas), pero se pueden adjuntar con @ si hace falta.
+**/target/**
+**/node_modules/**
+**/dist/**
+frontend/src/generated/**
+**/*.min.js
+**/*.log
