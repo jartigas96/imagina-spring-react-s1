@@ -1,0 +1,9 @@
+---
+description: Convenciones de componentes React del frontend de EventHub
+---
+
+# Frontend React
+
+1. Usa los tipos de `src/generated/graphql.ts`; no añadas tipos a `src/types/models.ts`.
+2. Los importes llegan como String decimal: formatéalos con `Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' })`.
+3. Prohibido `any`.

@@ -5,3 +5,7 @@
 - Los importes llegan como `String` decimal ("45.00"): formatea con `Intl.NumberFormat`, nunca con `toFixed` sobre string.
 - La UI puede ocultar opciones según el rol, pero **la seguridad la decide el backend**.
 - Componentes funcionales y hooks; sin `any`.
+
+## Errores frecuentes del agente en este repositorio
+
+- si hay trazabilidad → se debe de indicar en el chat

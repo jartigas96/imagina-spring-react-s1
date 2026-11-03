@@ -1,6 +1,6 @@
 # Laboratorio 1 · Cursor sobre un codebase real
 
-Curso *Cursor para Desarrolladores FullStack de Spring y React* · Sesión 1 · Joan Cifo
+Curso _Cursor para Desarrolladores FullStack de Spring y React_ · Sesión 1 · Joan Cifo
 
 **Horario:** 11:00 – 12:00, trabajo autónomo por equipos. Puesta en común a las 12:00 en la sala principal.
 
@@ -19,7 +19,7 @@ Joan Cifo no estará conectado durante el laboratorio. Todo lo que necesitáis e
 4. **Entregable:** copiad `docs/lab1-plantilla.md` como `docs/lab1-<equipo>.md` y rellenadlo durante el laboratorio.
 5. **Modo de Cursor:** Ask por defecto. Usad Agent solo en la Parte B para crear la rule y editar `AGENTS.md`.
 
-> **Atasco de más de 5 minutos:** anotad la duda en la sección *Dudas* del entregable y pasad al siguiente paso. Las resolvemos a las 12:00.
+> **Atasco de más de 5 minutos:** anotad la duda en la sección _Dudas_ del entregable y pasad al siguiente paso. Las resolvemos a las 12:00.
 
 ---
 
@@ -27,11 +27,11 @@ Joan Cifo no estará conectado durante el laboratorio. Todo lo que necesitáis e
 
 ### A1 · Preparar (5 min)
 
-1. En Cursor: *File → Open Workspace from File…* → `eventhub.code-workspace`.
+1. En Cursor: _File → Open Workspace from File…_ → `eventhub.code-workspace`.
 2. Ajustad en ese fichero las rutas de JDK a vuestra máquina:
    - `java.jdt.ls.java.home` → JDK 17 o superior.
    - `java.configuration.runtimes` → JDK 8 si lo tenéis. Si no lo tenéis, dejad solo el JDK moderno: el proyecto compila igualmente con `--release 8`.
-3. En *Cursor Settings → Indexing & Docs*, comprobad que el índice del proyecto está completo.
+3. En _Cursor Settings → Indexing & Docs_, comprobad que el índice del proyecto está completo.
 
 ### A2 · Onboarding (10 min)
 
@@ -49,16 +49,18 @@ Rol protagonista: **verificador**.
 
 ### A4 · Contexto mínimo (5 min)
 
-Bug: *«Con la mutation `cancelOrder` un cliente puede cancelar pedidos de otro cliente».*
+Bug: _«Con la mutation_ `cancelOrder` _un cliente puede cancelar pedidos de otro cliente»._
 
 1. Elegid **solo 3 archivos** de entre estos y adjuntadlos con `@`:
+
    `schema.graphqls` · `OrderGraphqlController.java` · `OrderService.java` · `CurrentUser.java` · `MyOrdersPage.tsx` · `package.json` · `InMemoryStore.java`
+
 2. Lanzad el prompt **P2** de `prompts/sesion-1.md`, ajustando los archivos adjuntos.
 3. En un **chat nuevo**, repetid la pregunta adjuntando la carpeta `backend/` entera.
 4. Comparad las dos respuestas: precisión, longitud y consumo de contexto (indicador del chat).
 
 **Checkpoint A:** tabla de 3 afirmaciones, las 3 piezas elegidas con su justificación y la comparación.
-**Reto ★★:** preguntad al agente *«¿Qué parte de tu respuesta tiene menos evidencia?»* y anotad lo que contesta.
+**Reto ★★:** preguntad al agente _«¿Qué parte de tu respuesta tiene menos evidencia?»_ y anotad lo que contesta.
 
 ---
 
@@ -87,7 +89,7 @@ Podéis cambiar las reglas, pero tienen que ser **verificables**.
 ### B2 · Comprobar que se aplica (4 min)
 
 1. Abrid un **chat nuevo** en modo Ask y adjuntad `@EventsPage.tsx`.
-2. Preguntad: *«¿Cómo mostrarías el precio de cada tipo de entrada?»*.
+2. Preguntad: _«¿Cómo mostrarías el precio de cada tipo de entrada?»_.
 3. Comprobad dos cosas: que la rule aparece como **aplicada** en el chat y que la respuesta **la cumple**.
 
 ### B3 · Romperla a propósito (3 min)
@@ -102,6 +104,7 @@ Añadid al final de `AGENTS.md` (raíz) este apartado, con al menos una entrada 
 
 ```markdown
 ## Errores frecuentes del agente en este repositorio
+
 - <qué hizo mal el agente> → <qué debe hacer en su lugar>
 ```
 
@@ -153,19 +156,19 @@ Elegid **portavoz** para la puesta en común de las 12:00.
 
 ## Puntuación (ranking de equipos)
 
-| Concepto | Puntos |
-|---|---|
-| Checkpoint completo (A, B o C) | +2 cada uno |
-| Reto ★★ resuelto | +1 cada uno |
-| Discrepancia de contrato correcta con evidencia | +1 |
-| Discrepancia que ningún otro equipo encontró | +2 |
+| Concepto                                        | Puntos      |
+| ----------------------------------------------- | ----------- |
+| Checkpoint completo (A, B o C)                  | +2 cada uno |
+| Reto ★★ resuelto                                | +1 cada uno |
+| Discrepancia de contrato correcta con evidencia | +1          |
+| Discrepancia que ningún otro equipo encontró    | +2          |
 
 ## Problemas frecuentes
 
-| Síntoma | Qué hacer |
-|---|---|
-| `npm run codegen` falla con *Cannot query field "venueName"* | **Es esperado.** Es el objeto de la Parte C. |
-| Maven tarda mucho la primera vez | Es la descarga de dependencias. En este laboratorio no hace falta compilar el backend. |
-| El índice de Cursor no termina | Revisad que `node_modules/` y `target/` estén en `.cursorindexingignore`. Seguid trabajando con `@` explícitos. |
-| No veis si la rule se aplicó | Abrid un **chat nuevo**: las rules se evalúan al iniciar la conversación y al adjuntar archivos. |
-| El agente quiere modificar archivos | Estáis en modo Agent: cambiad a **Ask** (`Shift + Tab`). |
+| Síntoma                                                      | Qué hacer                                                                                                       |
+| ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| `npm run codegen` falla con _Cannot query field "venueName"_ | **Es esperado.** Es el objeto de la Parte C.                                                                    |
+| Maven tarda mucho la primera vez                             | Es la descarga de dependencias. En este laboratorio no hace falta compilar el backend.                          |
+| El índice de Cursor no termina                               | Revisad que `node_modules/` y `target/` estén en `.cursorindexingignore`. Seguid trabajando con `@` explícitos. |
+| No veis si la rule se aplicó                                 | Abrid un **chat nuevo**: las rules se evalúan al iniciar la conversación y al adjuntar archivos.                |
+| El agente quiere modificar archivos                          | Estáis en modo Agent: cambiad a **Ask** (`Shift + Tab`).                                                        |
